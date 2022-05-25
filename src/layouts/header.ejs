@@ -1,0 +1,36 @@
+<!-- ======= Mobile nav toggle button ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<!-- ======= Header ======= -->
+<header id="header">
+  <div class="d-flex flex-column">
+    <div class="profile">
+      <img
+        src="<%= require('../assets/images/profile-img.png') %>"
+        alt=""
+        class="img-fluid rounded-circle"
+      />
+      <h1 class="text-light"><a href="/">Name</a></h1>
+      <div class="social-links mt-3 text-center">
+        <a href="https://github.com/meiweijia" class="github"
+          ><i class="bx bxl-github"></i
+        ></a>
+      </div>
+    </div>
+
+    <nav id="navbar" class="nav-menu navbar">
+      <ul>
+        <% router.forEach(function(nav){ %>
+        <li class="nav-link scrollto <% if(key === nav.name){ %>active<% } %>">
+          <a href="<%= nav.name === 'index'?'/':nav.name+'.html' %>">
+            <i class="bx <%= nav.icon%>"></i>
+            <span> <%= nav.title %> </span>
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+    </nav>
+    <!-- .nav-menu -->
+  </div>
+</header>
+<!-- End Header -->
